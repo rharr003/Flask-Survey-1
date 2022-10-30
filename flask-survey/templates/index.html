@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{survey.title}}
+{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+
+                        <h2 class="flash-text">{{ message }}</h2>
+                {% endfor %}
+            {% endif %}
+{% endwith %}
+
+<h1>{{survey.instructions}}</h1>
+<a href="/questions/0"><button>Start Survey</button></a>
+
+{% endblock %}
